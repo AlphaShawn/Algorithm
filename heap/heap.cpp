@@ -10,6 +10,9 @@
  * 					2.support quick build heap.
  * 				  Use array to implement binary tree. 
  * 				  Array use std::vector.
+ * 				  
+ * 	TODO:	
+ *  	  detailed comments.
  */
 
 
