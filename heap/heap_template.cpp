@@ -12,6 +12,8 @@
  * 				  
  * 				  Use array to implement binary tree. 
  * 				  Array use std::vector.
+ *  TODO:	
+ *  	  detailed comments.
  */
 
 
