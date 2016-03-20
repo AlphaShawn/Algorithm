@@ -34,6 +34,11 @@ public:
 		:root(NULL)
 	{}
 
+	Leftist_Tree(int x)
+	{
+		root = new Node(x, 0, NULL, NULL);
+	}
+
 	bool insert(int x){
 		Node* node = new Node(x, 0, NULL, NULL);
 		root = _merge(root, node);
@@ -43,16 +48,11 @@ public:
 	int pop(){
 		int ans = root->data;
 		Node* tmp = root;
-		if(tmp->left == NULL)
-		{
-			free(root);
+		if(root->left == NULL)
 			root = NULL;
-		}
 		else
-		{
-			root = _merge(root->left, root->right);
-			free(tmp);
-		}
+			root = _merge(root->left, root->right);			
+		free(tmp);
 		return ans;
 	}
 
@@ -67,9 +67,32 @@ public:
 		root = _merge(root, rht.root);
 	}
 
+	void print()
+	{
+		print_tree(root);
+	}
+
+	void print_tree(Node *node)
+	{
+		if(node == NULL) return;
+		std::cout<<node->data<<' ';
+		if(node->left)
+		{
+			std::cout<<"left:"<<node->left->data;
+		}
+		if(node->right)
+		{
+			std::cout<<"right:"<<node->right->data;
+		}
+		std::cout<<std::endl;
+		print_tree(node->left);
+		print_tree(node->right);
+	}
+
 	~Leftist_Tree()
 	{
-		free(root);
+		if(root)
+			_free(root);
 	}
 private:
 
@@ -81,21 +104,21 @@ private:
 		l->right = _merge(l->right, r);
 
 		if(l->left == NULL || l->left->dist < l->right->dist)
-				swap(l->left, r->right)
+			std::swap(l->left, l->right);
 
 		if(l->right == NULL)
 			l->dist = 0;
 		else
-			l->dist = l->right.dist + 1;
+			l->dist = l->right->dist + 1;
 		return l;
 	}
 
-	void free(Node* t)
+	void _free(Node* t)
 	{
 		if(t->left)
-			free(t->left);
+			_free(t->left);
 		if(t->right)
-			free(t->right);
+			_free(t->right);
 		free(t);
 	}
 
@@ -104,5 +127,13 @@ private:
 
 int main()
 {
+	int N, M, t1, t2;
+	std::cin>>N;
+	std::vector<Leftist_Tree> T;
+	for(int i=0; i<N; i++)
+	{
+		std::cin>>t1;
+		T.push_back(Leftist_Tree(t1));
+	}
 
-}
+}	
