@@ -10,10 +10,17 @@ The code is written in C++ class style.
 
 * heap, heap_template, support customize compare function and data.
 * leftist Tree, basic heap opertion, quick merge
+* Union set, path compression and weighted tree
 
 ## TODO
 * skip list
 * quick_power
 * leftist Tree, OJ problem
 * quick sort
-* Union set
+* graph
+	* SPFA
+	* Dijkstra
+	* Kruskal
+	* Floyd
+	* Tarjan
+* network flow

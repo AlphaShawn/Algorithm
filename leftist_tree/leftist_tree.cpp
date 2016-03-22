@@ -2,7 +2,7 @@
  *	Algorithm:  Leftist_Tree(heap)
  *	
  * 	Author: 	Alpha Xiao
- * 	Date  :		2016.3.18
+ * 	Date  :		2016.3.19
  * 	Language:  	C++11
  *
  * 	Description:  A Leftist tree(heap) class.
@@ -11,6 +11,7 @@
  * 				  
  * 	TODO:	
  * 		  Test http://acm.hdu.edu.cn/showproblem.php?pid=1512
+ * 		  		
  *  	  detailed comments.
  */
 
