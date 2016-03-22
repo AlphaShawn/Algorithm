@@ -6,14 +6,15 @@
  * 	Language:  	C++11
  *
  * 	Description:  
- * 				  
- * 	TODO:	
- * 		 	three-way-partition.
+ * 				  quick-sort:  
+ * 				  		1.implement two methods of partition.
+ * 				  			normal partition and Dijkstra 3-way partitioning
+ * 				  		2.randomized pivot.
  */
 
 #include <iostream>
 #include <vector>
-
+#include <utility>
 
 class Sort
 {
@@ -27,35 +28,70 @@ public:
 	{
 		if( l >= r )
 			return;
-		int p =  partition(vec, l, r, l);
-		quick_sort(vec, l, p-1);
-		quick_sort(vec, p+1, r);
+		//randomize
+		int t = rand()%(r-l+1)+l;
+		std::swap(vec[l], vec[t]);
+		//int p =  partition(vec, l, r);
+		std::pair<int, int> p = three_way_partition(vec, l ,r);
+		quick_sort(vec, l, p.first-1);
+		quick_sort(vec, p.second, r);
 	}
 
-	static int partition(std::vector<int> &vec, int l, int r, int pivot)
+	/**
+	 * invariant:   [low, low] : x
+	 * 				[low+1, l] : <= x
+	 * 				[l, r]	   : to be determined
+	 * 				[r+1, high]: > x
+	 */
+	static int partition(std::vector<int> &vec, int l, int r)
 	{
-		std::swap(vec[l], vec[pivot]);
-		l++;
+		int low = l;
+		int x = vec[l];
+		while(r>l)
+		{
+			if(vec[r] <= x)
+			{
+				l++;
+				std::swap(vec[l], vec[r]);
+			}
+			r--;
+		}
+		std::swap(vec[low], vec[l]);
+		return l;
+	}
+
+
+	/**
+	 * invariant: [low, pi-1] : < x
+	 * 			  [pi, l-1]   : =x
+	 * 			  [l, r]	  : to do determined
+	 * 			  [r+1, high] : >x
+	 */
+	static std::pair<int, int> three_way_partition(std::vector<int> &vec, int l, int r)
+	{
+		int x = vec[l];
+		int pi = l;
 		while(l<r)
 		{
-			while(vec[l] <= vec[pivot] && l<r) l++;
-			while(vec[r] >= vec[pivot] && r>l) r--;
-			if(l<=r)
+			while(!(vec[l] > x) && l < r)
 			{
-				std::swap(vec[l],vec[r]);
-				l++,
+				if(vec[l] < x)
+				{
+					std::swap(vec[l], vec[pi]);
+					pi++;
+				}
+				l++;
+			}
+			while(vec[r] > x && r > l)
+				r--;
+			if( l < r )
+			{
+				std::swap(vec[l], vec[r]);
 				r--;
 			}
 		}
-		std::swap(vec[pivot], vec[r]);
-		return r;
+		return std::make_pair(pi,l);
 	}
-
-	static pair<int, int> three_way_partition(std::vector<int> &vec, int l, int r, int pivot)
-	{
-
-	}
-
 
 private:
 

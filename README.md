@@ -11,12 +11,13 @@ The code is written in C++ class style.
 * heap, heap_template, support customize compare function and data.
 * leftist Tree, basic heap opertion, quick merge
 * Union set, path compression and weighted tree
+* Quick-sort, randomized pivot, two ways of partition
 
 ## TODO
 * skip list
 * quick_power
 * leftist Tree, OJ problem
-* quick sort
+* 
 * graph
 	* SPFA
 	* Dijkstra
