@@ -12,12 +12,12 @@ The code is written in C++ class style.
 * leftist Tree, basic heap opertion, quick merge
 * Union set, path compression and weighted tree
 * Quick-sort, randomized pivot, two ways of partition
+* quick_power, data type:integer
 
 ## TODO
 * skip list
-* quick_power
+* Matrix data structure, support +, -, *, power
 * leftist Tree, OJ problem
-* 
 * graph
 	* SPFA
 	* Dijkstra
