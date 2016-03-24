@@ -25,3 +25,5 @@ The code is written in C++ class style.
 	* Floyd
 	* Tarjan
 * network flow
+* DP
+	* LCS， small space, reconstruct seq
