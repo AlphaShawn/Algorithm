@@ -9,7 +9,7 @@ The code is written in C++ class style.
 ## Implemented
 
 * heap, heap_template, support customize compare function and data.
-* leftist Tree, basic heap opertion, quick merge
+* leftist Tree, basic heap opertion, quick merge, use it solve OJ problem(HDU-1512)
 * Union set, path compression and weighted tree
 * Quick-sort, randomized pivot, two ways of partition
 * quick_power, data type:integer
@@ -17,7 +17,6 @@ The code is written in C++ class style.
 ## TODO
 * skip list
 * Matrix data structure, support +, -, *, power
-* leftist Tree, OJ problem
 * graph
 	* SPFA
 	* Dijkstra

@@ -1,21 +1,15 @@
 /**
- *	Algorithm:  Leftist_Tree(heap)
- *	
- * 	Author: 	Alpha Xiao
- * 	Date  :		2016.3.19
- * 	Language:  	C++11
+ * OJ-HDU-1512
+ * Status:Exe.Time:3900MS	Exe.Memory:15548K	
+ * Author: Xiao YuWei
+ * Date: 2016.3.22
  *
- * 	Description:  A Leftist tree(heap) class.
- * 					1.support insert(), pop(), top(), empty() operation
- * 					2.support quick merge.
- * 				  Not support assign operation. So it should not be store in STL container.
- *
- *  Update:
- *  	2016.3.27   detailed commented.
+ * Note:
+ * 		Organization of code is not very well.
  */
 
 #include <iostream>
-#include <exception>
+#include <vector>
 
 struct Node
 {
@@ -131,8 +125,8 @@ public:
 	 */
 	~Leftist_Tree()
 	{
-		if(root)
-			_free(root);
+		//if(root)
+		//	_free(root);
 	}
 private:
 
@@ -145,7 +139,7 @@ private:
 	Node* _merge(Node* &l, Node* &r){
 		if( l == NULL || r == NULL)			/* one of the root is empty, return another */
 			return l == NULL? r:l;
-		if(l->data > r->data)				/* Let the left tree's root value is smaller */
+		if(l->data < r->data)				/* Let the left tree's root value is larger */
 			std::swap(l, r);
 		l->right = _merge(l->right, r);		/* recursively merge tree. */
 
@@ -177,15 +171,88 @@ private:
 	Node* root;
 };
 
+
+class UnionSet
+{
+public:
+	/**
+	 * Constructor.
+	 * The initialize value of each element is -1,
+	 * which means they are the only element in 
+	 * their set.
+	 */
+	UnionSet(int size)
+		:vec(size+1, -1)
+	{}
+
+	void union_ele(int x,int y)
+	{
+		int xf = findFather(x);
+		int yf = findFather(y);
+		if( xf == yf )
+			return ;
+		//xf size is smaller, swap them, then xf is bigger
+		if(vec[xf] > vec[yf])
+			std::swap(xf,yf);
+		//then union yf to xf
+		vec[xf] = vec[xf] + vec[yf];
+		vec[yf] = xf;
+	}
+
+	bool isInSameSet(int x,int y)
+	{
+		return findFather(x) == findFather(y);
+	}
+
+	int findFather(int x)
+	{
+		if(vec[x] < 0)
+			return x;
+		else 
+			/* path compression */
+			return vec[x] = findFather(vec[x]);
+	}
+private:
+	std::vector<int> vec;
+};
+
 int main()
 {
 	int N, M, t1, t2;
-	std::cin>>N;
-	std::vector<Leftist_Tree> T;
-	for(int i=0; i<N; i++)
+	while(std::cin>>N)
 	{
-		std::cin>>t1;
-		T.push_back(Leftist_Tree(t1));
-	}
+		
+		UnionSet S(N);
+		std::vector<Leftist_Tree> T;
+		for(int i=0; i<N; i++)
+		{
 
-}	
+			std::cin>>t1;
+			T.push_back(Leftist_Tree(t1));
+		}
+		std::cin>>M;
+		for(int i=0; i<M; i++)
+		{
+			std::cin>>t1>>t2;
+			t1--;t2--;
+			if(S.isInSameSet(t1,t2))
+			{
+				std::cout<<-1<<'\n';
+				continue;
+			}
+			else
+			{
+				int t1p = S.findFather(t1);
+				int t2p = S.findFather(t2);
+				//std::cout<<t1p<<':'<<T[t1p].top()<<' '<<t2p<<':'<<T[t2p].top()<<'\n';
+				T[t1p].insert(T[t1p].pop()/2);
+				T[t2p].insert(T[t2p].pop()/2);
+				T[t1p].merge(T[t2p]);
+				S.union_ele(t1,t2);
+				if(S.findFather(t1) != t1p)
+					T[S.findFather(t1)] = T[t1p];
+				std::cout<<T[t1p].top()<<'\n';
+			}
+		}
+	}
+}
