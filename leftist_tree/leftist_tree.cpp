@@ -20,6 +20,10 @@
 
 struct Node
 {
+	/**
+	 * Constructor. 
+	 * Using data, distance to leaf node, left\right child pointers
+	 */
 	Node(int d, int dis, Node* l, Node* r)
 		:data(d), dist(dis), left(l), right(r)
 	{}
@@ -31,21 +35,39 @@ struct Node
 class Leftist_Tree
 {
 public:
+	/**
+	 * Empty constructor
+	 */
 	Leftist_Tree()
 		:root(NULL)
 	{}
 
+	/**
+	 * Constructor. 
+	 * Construct a tree with one node.
+	 */
 	Leftist_Tree(int x)
 	{
 		root = new Node(x, 0, NULL, NULL);
 	}
 
+	/**
+	 * Insert x into tree.
+	 * First construct a empty node then merge into current tree.
+	 * @param  x value of the node
+	 */
 	bool insert(int x){
 		Node* node = new Node(x, 0, NULL, NULL);
 		root = _merge(root, node);
 		return true;
 	}
 
+
+	/**
+	 * Remove the root node and return its value.
+	 * Merge root's left and right child tree.
+	 * @return value of root.
+	 */
 	int pop(){
 		int ans = root->data;
 		Node* tmp = root;
@@ -57,6 +79,11 @@ public:
 		return ans;
 	}
 
+
+	/**
+	 * Get the root value
+	 * @return root value 
+	 */
 	int top(){
 		if(root != NULL)
 			return root->data;
@@ -64,10 +91,19 @@ public:
 			throw std::runtime_error("empty tree");
 	}
 
+
+	/**
+	 * Merge two tree. using private method _merge
+	 * @param rht Tree to be merged.
+	 */
 	void merge(Leftist_Tree &rht){
 		root = _merge(root, rht.root);
 	}
 
+
+	/**
+	 * print tree elements by recursion.
+	 */
 	void print()
 	{
 		print_tree(root);
@@ -90,6 +126,10 @@ public:
 		print_tree(node->right);
 	}
 
+
+	/**
+	 * Free space. 
+	 */
 	~Leftist_Tree()
 	{
 		if(root)
@@ -97,23 +137,34 @@ public:
 	}
 private:
 
+	/**
+	 * Merge two tree
+	 * @param  l root of left tree
+	 * @param  r root of right tree
+	 * @return   root pointer of merged tree.
+	 */
 	Node* _merge(Node* &l, Node* &r){
-		if( l == NULL || r == NULL)
+		if( l == NULL || r == NULL)			/* one of the root is empty, return another */
 			return l == NULL? r:l;
-		if(l->data > r->data)
+		if(l->data > r->data)				/* Let the left tree's root value is smaller */
 			std::swap(l, r);
-		l->right = _merge(l->right, r);
+		l->right = _merge(l->right, r);		/* recursively merge tree. */
 
-		if(l->left == NULL || l->left->dist < l->right->dist)
+		if(l->left == NULL || l->left->dist < l->right->dist)	/* balance tree according to dist to leaf node*/
 			std::swap(l->left, l->right);
 
-		if(l->right == NULL)
+		if(l->right == NULL)				/* update root distance value*/
 			l->dist = 0;
 		else
 			l->dist = l->right->dist + 1;
 		return l;
 	}
 
+
+	/**
+	 * Free space by recursive.
+	 * @param t pointer to node which is to be freeed.
+	 */
 	void _free(Node* t)
 	{
 		if(t->left)
@@ -123,6 +174,7 @@ private:
 		free(t);
 	}
 
+	/* private variable.*/
 	Node* root;
 };
 
