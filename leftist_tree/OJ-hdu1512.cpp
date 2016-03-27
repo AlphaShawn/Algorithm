@@ -1,9 +1,12 @@
 /**
- * OJ-HDU-1512
+ * OJ-HDU-1512 http://acm.hdu.edu.cn/showproblem.php?pid=1512
  * Status:Exe.Time:3900MS	Exe.Memory:15548K	
  * Author: Xiao YuWei
  * Date: 2016.3.22
  *
+ * Algorithm:
+ * 			Leftist tree + union-find-set
+ * 
  * Note:
  * 		Organization of code is not very well.
  */
