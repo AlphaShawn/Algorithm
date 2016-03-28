@@ -13,6 +13,8 @@ The code is written in C++ class style.
 * Union set, path compression and weighted tree
 * Quick-sort, randomized pivot, two ways of partition
 * quick_power, data type:integer
+* DP
+	* LCS， space compresion
 
 ## TODO
 * skip list
@@ -25,4 +27,4 @@ The code is written in C++ class style.
 	* Tarjan
 * network flow
 * DP
-	* LCS， small space, reconstruct seq
+	* LCS， reconstruct seq
