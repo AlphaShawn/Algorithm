@@ -15,12 +15,14 @@ The code is written in C++ class style.
 * quick_power, data type:integer
 * DP
 	* LCS， space compresion
+* graph
+	* SPFA
 
 ## TODO
 * skip list
 * Matrix data structure, support +, -, *, power
 * graph
-	* SPFA
+	* SPFA  - test and comment
 	* Dijkstra
 	* Kruskal
 	* Floyd
