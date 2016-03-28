@@ -27,5 +27,4 @@ public:
 	std::vector<int> pre;	//previous edge, space O(m), value:-1 mean no previous edge
 	std::vector<int> v;		//correpsoned node, space O(m)
 	std::vector<int> w;		//weight of the edge, space O(m)
-
-}
+};
