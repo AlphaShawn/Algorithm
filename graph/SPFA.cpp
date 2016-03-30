@@ -56,12 +56,16 @@ public:
  */
 std::vector<int> SPFA(int s, adjacent_list &G)
 {
+	/* store the distance from s to each vertex*/
 	std::vector<int> dis(G.size, -1);
 	dis[s] = 0;
-	std::vector<bool> inQueue(G.size, 0);
+
 	std::queue<int> Q;
 	Q.push(s);
+
+	std::vector<bool> inQueue(G.size, 0);
 	inQueue[s] = true;
+
 	while(!Q.empty())
 	{
 		int now = Q.front();
@@ -69,6 +73,7 @@ std::vector<int> SPFA(int s, adjacent_list &G)
 		for(int i = G.pos[now]; i!=-1; i = G.pre[i])
 		{
 			int next = G.v[i];
+			/* shorten the distance, then add to queue. */
 			if(dis[next] == -1 || dis[now] + G.w[i] < dis[next])
 			{
 				dis[next] = dis[now] + G.w[i];
