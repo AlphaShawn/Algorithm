@@ -17,16 +17,19 @@ The code is written in C++ class style.
 	* LCS， space compresion
 * graph
 	* SPFA
+	* Dijkstra, normal version, heap version
 
 ## TODO
 * skip list
 * Matrix data structure, support +, -, *, power
 * graph
 	* SPFA  - test and comment
-	* Dijkstra
+	* Dijkstra - test
 	* Kruskal
 	* Floyd
 	* Tarjan
 * network flow
 * DP
 	* LCS， reconstruct seq
+	* OJ Lintcode 92
+	* OJ Lintcode 109  
