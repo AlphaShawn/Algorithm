@@ -23,7 +23,7 @@ The code is written in C++ class style.
 * skip list
 * Matrix data structure, support +, -, *, power
 * graph
-	* SPFA  - test and comment
+	* SPFA  - test
 	* Dijkstra - test
 	* Kruskal
 	* Floyd

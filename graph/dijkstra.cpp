@@ -7,6 +7,7 @@
  *
  * 	Description:  
  * 				  Using adjacent_list
+ * 				  Normal version and Heap Version
  *
  *  TODO:
  *  	1.test
@@ -164,7 +165,7 @@ private:
 };
 
 
-vector<int> Dijkstra(adjacent_list &G, int s)
+vector<int> Dijkstra_Heap(adjacent_list &G, int s)
 {
 	const int INT_INF = 0x7fffffff;
 	std::vector<int> dis(G.size, INT_INF);
@@ -206,5 +207,32 @@ vector<int> Dijkstra(adjacent_list &G, int s)
 		/*set the color to reached*/
 		color[now] = 2;
 	}	
+	return dis;
+}
+
+
+vector<int> Dijkstra_Normal(adjacent_list &G, int s)
+{
+	const int INT_INF = 0x7fffffff;
+	std::vector<int> dis(G.size, INT_INF);
+	std::vector<bool> visited;
+	dis[s] = 0;
+	for(int i = 0; i < G.size; ++i)
+	{
+		int now = -1, td;
+		for(int j = 0; j < G.size; ++j)
+			if(now == -1 || (dis[j] < td && !visited[j] ))
+			{
+				now = j;
+				td = dis[j];
+			}
+		visited[now] = true;
+		for(int j = G.pos[now]; j != -1; j = G.pre[j])
+		{
+			int next = G.v[j];
+			if(dis[next] > dis[now]+G.w[j])
+				dis[next] = dis[now] + G.w[j];
+		}
+	}
 	return dis;
 }
