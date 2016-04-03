@@ -7,6 +7,9 @@
  *
  * 	Description: 
  * 				  A quick method to compute x^n
+ *
+ *  Update Date: 
+ *  		2016.4.2  add mul_mod. avoid big number overflow.
  */
 
 
@@ -16,6 +19,25 @@
  class Power
  {
  public:
+
+ 	static int mul_mod(int a, int b, int m)
+ 	{
+ 		int s = 0;
+		while(b)
+		{
+			if(b&1)
+			{
+				s = s + a;
+				if(s > m)
+					s -= m;
+			}
+			a <<= 1;
+			if( a > m )
+				a -= m;
+			b >>= 1; 
+		}
+		return s;
+ 	}
 
  	static int power(int x, int n, int m = 0)
  	{
@@ -54,8 +76,8 @@
  		while(n > 0)
  		{
  			if((n&1) == 1)
- 				ans = (ans * x) % m;
- 			x = (x*x)%m;
+ 				ans = mul_mod(ans, x, m);
+ 			x = mul_mod(x, x, m);
  			n >>= 1;
  		}
  		return ans;
