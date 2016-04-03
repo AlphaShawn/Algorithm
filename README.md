@@ -9,11 +9,13 @@ Most of the code is written in C++ class style. And try to create functional and
 ## Implemented
 * String
 	* KMP
+* Number theory
+	* Miller_Rabin
 * heap, heap_template, support customize compare function and data.
 * leftist Tree, basic heap opertion, quick merge, use it solve OJ problem(HDU-1512)
 * Union set, path compression and weighted tree
 * Quick-sort, randomized pivot, two ways of partition
-* quick_power, data type:integer
+* quick_power, data type:integer, using muliply mod avoid overflow
 * DP
 	* LCS， space compresion
 * graph
@@ -45,6 +47,7 @@ OJ-Problem ID | Dir | Description
 [Lintcode-158](http://www.lintcode.com/zh-cn/problem/two-strings-are-anagrams/)|  | sort string
 [Lintcode-55](http://www.lintcode.com/zh-cn/problem/compare-strings/)|  | sort string
 [Lintcode-13](http://www.lintcode.com/zh-cn/problem/strstr/)| /string/KMP.cpp | using kmp do string matching
+[Lintcode-171](http://www.lintcode.com/zh-cn/problem/anagrams/) | | sorting and hashing
 
 ## Heap
 
