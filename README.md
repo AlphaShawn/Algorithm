@@ -49,10 +49,18 @@ OJ-Problem ID | Dir | Description
 [Lintcode-13](http://www.lintcode.com/zh-cn/problem/strstr/)| /string/KMP.cpp | using kmp do string matching
 [Lintcode-171](http://www.lintcode.com/zh-cn/problem/anagrams/) | | sorting and hashing
 
-## Heap
+
+## DP
+
+## Math
+
+OJ-Problem ID | Dir | Description
+--------------|-----|------------
+[hihocoder](http://hihocoder.com/contest/hiho92/problem/1)| number_theory/Miller_Rabin.cpp | Miller–Rabin_primality_test - [WIKI](https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test)
+
+## Data structure
 
 OJ-Problem ID | Dir | Description
 --------------|-----|------------
 [HDU-1512](http://acm.hdu.edu.cn/showproblem.php?pid=1512)| /leftist_tree/OJ-hdu1512.cpp| leftist tree + union set
-
-## DP
+[hihocoder-1078](http://hihocoder.com/problemset/problem/1078) | | segment tree + lazy update
