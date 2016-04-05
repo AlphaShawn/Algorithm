@@ -10,7 +10,9 @@
  * 					2.Use path compression and weighted tree
  *      			3.Each set, its root is a negative number, and the absolute 
  * 				      value of it is the size of the set.
- * 		  		
+ *
+ *  update:
+ *  	4.5  comments
  */
 
 #include <iostream>
@@ -29,6 +31,11 @@ public:
 		:vec(size+1, -1)
 	{}
 
+	/**
+	 * Union x set and y set
+	 * @param x 
+	 * @param y 
+	 */
 	void union_ele(int x,int y)
 	{
 		int xf = findFather(x);
@@ -43,6 +50,12 @@ public:
 		vec[yf] = xf;
 	}
 
+	/**
+	 * Judge whether x and y in the same set.
+	 * @param  x 
+	 * @param  y 
+	 * @return   same set return true, o.w return false
+	 */
 	bool isInSameSet(int x,int y)
 	{
 		return findFather(x) == findFather(y);
