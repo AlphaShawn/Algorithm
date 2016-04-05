@@ -21,23 +21,24 @@ Most of the code is written in C++ class style. And try to create functional and
 * graph
 	* SPFA
 	* Dijkstra, normal version, heap version
+	* Minimum spanning tree
+		* Kruskal
+		* Prim
 
 ## TODO
 * skip list
 * Matrix data structure, support +, -, *, power
 * graph
 	* SPFA  - test
-	* Dijkstra - test
-	* Minimum spanning tree
-		* Kruskal
-		* Prim
+	* Dijkstra - test ZOJ1298  P137
+	* Minimum spanning tree   ZOJ 1542  P102
+		* Kruskal test
+		* Prim  test
 	* Floyd
 	* Tarjan
 * network flow
 * DP
 	* LCS， reconstruct seq
-	* OJ Lintcode 92
-	* OJ Lintcode 109 
 
 # OnlineJudge Catalog
 
