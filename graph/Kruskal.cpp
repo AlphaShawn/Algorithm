@@ -9,8 +9,10 @@
  * 				  
  *
  *  TODO:
- *  	test 
  *   	support more parameter type
+ *
+ *  Update:  
+ *      4.8  compare bug.
  */
 
 #include <iostream>
@@ -24,7 +26,7 @@ struct edge
 	int from, to;
 	int w;
 	static bool compare(const edge &lhs, const edge &rhs) {
-		return lhs.w > rhs.w ? 1 : 0;
+		return lhs.w > rhs.w ? 0 : 1;
 	}
 };
 

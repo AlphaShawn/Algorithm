@@ -32,7 +32,6 @@ Most of the code is written in C++ class style. And try to create functional and
 	* SPFA  - test
 	* Dijkstra - test ZOJ1298  P137
 	* Minimum spanning tree   ZOJ 1542  P102
-		* Kruskal test
 		* Prim  test
 	* Floyd
 	* Tarjan
