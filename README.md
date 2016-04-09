@@ -52,6 +52,11 @@ OJ-Problem ID | Dir | Description
 
 ## DP
 
+## Graph
+OJ-Problem ID | Dir | Description
+--------------|-----|------------
+[poj-1861](http://poj.org/problem?id=1861)| graph/kruskal_poj1861 | kruskal
+
 ## Math
 
 OJ-Problem ID | Dir | Description
