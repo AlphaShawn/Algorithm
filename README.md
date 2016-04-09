@@ -24,16 +24,18 @@ Most of the code is written in C++ class style. And try to create functional and
 	* Minimum spanning tree
 		* Kruskal
 		* Prim
+	* Floyd
 
 ## TODO
 * skip list
 * Matrix data structure, support +, -, *, power
+* Fibonacci heap
 * graph
 	* SPFA  - test
 	* Dijkstra - test ZOJ1298  P137
 	* Minimum spanning tree
 		* Prim  using heap or more advanced data structure
-	* Floyd
+	* Floyd - test
 	* Tarjan
 * network flow
 * DP
