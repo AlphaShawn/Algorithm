@@ -31,8 +31,8 @@ Most of the code is written in C++ class style. And try to create functional and
 * graph
 	* SPFA  - test
 	* Dijkstra - test ZOJ1298  P137
-	* Minimum spanning tree   ZOJ 1542  P102
-		* Prim  test
+	* Minimum spanning tree
+		* Prim  using heap or more advanced data structure
 	* Floyd
 	* Tarjan
 * network flow
@@ -55,7 +55,7 @@ OJ-Problem ID | Dir | Description
 ## Graph
 OJ-Problem ID | Dir | Description
 --------------|-----|------------
-[poj-1861](http://poj.org/problem?id=1861)| graph/kruskal_poj1861 | kruskal
+[poj-1861](http://poj.org/problem?id=1861)| graph/kruskal_poj1861 | kruskal or prim
 
 ## Math
 

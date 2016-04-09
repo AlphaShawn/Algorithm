@@ -9,8 +9,10 @@
  * 				  
  *
  *  TODO:
- *  	test 
  *  	using heap to reduce time complex
+ *
+ *  Update:
+ *  	4.9   fixed bugs.
  */
 
 #include <iostream>
@@ -52,7 +54,7 @@ public:
 adjacent_list Prim(adjacent_list &G) {
 
 	std::vector<int> dist(G.size, INTMAX);
-	std::vector<int> parent(G.size, 0);		/* record the edge of MST */
+	std::vector<int> parent(G.size, -1);		/* record the edge of MST */
 	std::vector<bool> S(G.size, false);
 	dist[0] = 0;
 
@@ -71,6 +73,8 @@ adjacent_list Prim(adjacent_list &G) {
 		for(int j = G.pos[next]; j != -1; j = G.pre[j]) {
 			int node = G.v[j];
 			int value = G.w[j];
+			if(S[node])
+				continue; 
 			if( dist[node] > value + dist[next] ) {
 				dist[node] = value + dist[next];
 				parent[node] = next;
@@ -79,7 +83,9 @@ adjacent_list Prim(adjacent_list &G) {
 	}
 
 	adjacent_list ans(G.size);
-	for(int i = 1; i < G.size; ++i){
+	for(int i = 0; i < G.size; ++i)
+	if(parent[i] != -1)
+	{
 		ans.add_edge(i, parent[i]);
 		ans.add_edge(parent[i], i);
 	}
