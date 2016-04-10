@@ -12,6 +12,7 @@ Most of the code is written in C++ class style. And try to create functional and
 * Number theory
 	* Miller_Rabin
 * heap, heap_template, support customize compare function and data.
+* Trie tree
 * leftist Tree, basic heap opertion, quick merge, use it solve OJ problem(HDU-1512)
 * Union set, path compression and weighted tree
 * Quick-sort, randomized pivot, two ways of partition
@@ -27,7 +28,7 @@ Most of the code is written in C++ class style. And try to create functional and
 	* Floyd
 
 ## TODO
-* skip list
+* skip list 
 * Matrix data structure, support +, -, *, power
 * Fibonacci heap
 * graph
@@ -71,3 +72,4 @@ OJ-Problem ID | Dir | Description
 --------------|-----|------------
 [HDU-1512](http://acm.hdu.edu.cn/showproblem.php?pid=1512)| /leftist_tree/OJ-hdu1512.cpp| leftist tree + union set
 [hihocoder-1078](http://hihocoder.com/problemset/problem/1078) | | segment tree + lazy update
+[OJ hihocoder 1014](http://hihocoder.com/problemset/problem/1014) | /TrieTree/trie.cpp | simple trie tree
