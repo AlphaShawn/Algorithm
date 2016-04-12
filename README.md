@@ -60,6 +60,7 @@ OJ-Problem ID | Dir | Description
 OJ-Problem ID | Dir | Description
 --------------|-----|------------
 [poj-1861](http://poj.org/problem?id=1861)| graph/kruskal_poj1861 | kruskal or prim
+[poj-1135](http://poj.org/problem?id=1135)| graph/poj_1135.cpp | dijkstra or SPFA
 
 ## Math
 
