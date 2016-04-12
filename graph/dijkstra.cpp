@@ -9,8 +9,8 @@
  * 				  Using adjacent_list
  * 				  Normal version and Heap Version
  *
- *  TODO:
- *  	1.test
+ *  Update:
+ *  	4.12 fix bugs  Alpha Xiao  
  */
 
 
@@ -176,7 +176,7 @@ vector<int> Dijkstra_Heap(adjacent_list &G, int s)
 	 *	1: will visited
 	 *  2: reached
 	 */	
-	std::vector<short> color;
+	std::vector<short> color(G.size);
 	
 	PriorityQueue Q(distance);
 	Q.insert(start);
@@ -188,7 +188,7 @@ vector<int> Dijkstra_Heap(adjacent_list &G, int s)
 		Q.pop();
 
 		/*loop the next vertex link with now*/
-		for(int i = G.pos[now]; i != -1; ++i)
+		for(int i = G.pos[now]; i != -1; i = G.pre[i])
 		{
 			int next = G.v[i];			/*get next vertex*/
 			int w = G.w[i];				/*get the weight of the edge*/
@@ -215,17 +215,19 @@ vector<int> Dijkstra_Normal(adjacent_list &G, int s)
 {
 	const int INT_INF = 0x7fffffff;
 	std::vector<int> dis(G.size, INT_INF);
-	std::vector<bool> visited;
+	std::vector<bool> visited(G.size);
 	dis[s] = 0;
 	for(int i = 0; i < G.size; ++i)
 	{
-		int now = -1, td;
+		int now = -1, td = INT_INF;
 		for(int j = 0; j < G.size; ++j)
-			if(now == -1 || (dis[j] < td && !visited[j] ))
+			if( dis[j] < td && !visited[j] )
 			{
 				now = j;
 				td = dis[j];
 			}
+		if(now == -1)
+			break;
 		visited[now] = true;
 		for(int j = G.pos[now]; j != -1; j = G.pre[j])
 		{
@@ -235,4 +237,9 @@ vector<int> Dijkstra_Normal(adjacent_list &G, int s)
 		}
 	}
 	return dis;
+}
+
+int main() 
+{
+
 }
