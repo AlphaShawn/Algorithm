@@ -8,17 +8,17 @@
  * 	Description:  
  * 				  Using adjacent_matrix
  *
- *  TODO:
- *  	1.test
+ *  Update:
+ *  		4.13  optimize AlphaXiao
  */
 
 #include <iostream>
 
 /**
  * map: the adjacent matrix of graph
- * return: map[i][j] means the shortest path weight value of i->j
+ * the algorithm modify the parameter and return nothing.
  */
-std::vector<std::vector<int>> Floyd(std::vector<std::vector<int>> map) {
+void Floyd(std::vector<std::vector<int>> &map) {
 	int size = map.size();
 	for(int k = 0; k < size; ++k)
 		for(int i = 0;  i < size; ++i)

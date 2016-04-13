@@ -36,7 +36,6 @@ Most of the code is written in C++ class style. And try to create functional and
 	* SPFA  - test
 	* Minimum spanning tree
 		* Prim  using heap or more advanced data structure
-	* Floyd - test
 	* Tarjan
 * network flow
 * DP
