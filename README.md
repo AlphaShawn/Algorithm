@@ -33,7 +33,6 @@ Most of the code is written in C++ class style. And try to create functional and
 * Matrix data structure, support +, -, *, power
 * Fibonacci heap
 * graph
-	* SPFA  - test
 	* Minimum spanning tree
 		* Prim  using heap or more advanced data structure
 	* Tarjan
@@ -60,6 +59,7 @@ OJ-Problem ID | Dir | Description
 [poj-1861](http://poj.org/problem?id=1861)| graph/kruskal_poj1861 | kruskal or prim
 [poj-1135](http://poj.org/problem?id=1135)| graph/poj-1135.cpp | dijkstra or SPFA
 [poj-3616](http://poj.org/problem?id=3615)| graph/poh-3615 | Floyd
+[poj-3268](http://poj.org/problem?id=3268)| graph/poh-3268 | SPFA
 
 ## Math
 
