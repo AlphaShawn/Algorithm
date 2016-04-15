@@ -21,12 +21,14 @@ Most of the code is written in C++ class style. And try to create functional and
 * DP
 	* LCS， space compresion
 * graph
-	* SPFA
-	* Dijkstra, normal version, heap version
+	* Shortest Path(single source)
+		* SPFA
+		* Dijkstra, normal version, heap version
 	* Minimum spanning tree
 		* Kruskal
 		* Prim
 	* Floyd
+	* Tarjan
 
 ## TODO
 * skip list 
@@ -35,7 +37,7 @@ Most of the code is written in C++ class style. And try to create functional and
 * graph
 	* Minimum spanning tree
 		* Prim  using heap or more advanced data structure
-	* Tarjan
+	* Tarjan test  poj2762  p421
 * network flow
 * DP
 	* LCS， reconstruct seq
