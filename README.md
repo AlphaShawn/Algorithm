@@ -12,6 +12,7 @@ Most of the code is written in C++ class style. And try to create functional and
 * Number theory
 	* Miller_Rabin
 	* Eular_Prime_Select
+	* Josephus Problem
 * heap, heap_template, support customize compare function and data.
 * Trie tree
 * leftist Tree, basic heap opertion, quick merge, use it solve OJ problem(HDU-1512)
@@ -69,6 +70,7 @@ OJ-Problem ID | Dir | Description
 --------------|-----|------------
 [hihocoder](http://hihocoder.com/contest/hiho92/problem/1)| number_theory/Miller_Rabin.cpp | Miller–Rabin_primality_test - [WIKI](https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test)
 [hihocoder](http://hihocoder.com/contest/hiho93/problem/1) | number_theory/Rular_prime_select.cpp | Eular prime select
+[hihocoder](http://hihocoder.com/contest/hiho94/problem/1?sid=773738) | number_theory/Josephus.cpp | mod and recurrence
 
 ## Data structure
 
