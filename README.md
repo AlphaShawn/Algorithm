@@ -20,7 +20,7 @@ Most of the code is written in C++ class style. And try to create functional and
 * Quick-sort, randomized pivot, two ways of partition
 * quick_power, data type:integer, using muliply mod avoid overflow
 * DP
-	* LCS， space compresion
+	* LCS， space compresion(version 1), reconstruct seq(version 2)
 * graph
 	* Shortest Path(single source)
 		* SPFA
@@ -33,6 +33,8 @@ Most of the code is written in C++ class style. And try to create functional and
 
 ## TODO
 * skip list 
+* big number
+* Aho-Corasick automaton (AC automaton)
 * Matrix data structure, support +, -, *, power
 * Fibonacci heap
 * graph
@@ -40,8 +42,6 @@ Most of the code is written in C++ class style. And try to create functional and
 		* Prim  using heap or more advanced data structure
 	* Tarjan test  poj2762  p421
 * network flow
-* DP
-	* LCS， reconstruct seq
 
 # OnlineJudge Catalog
 
