@@ -33,8 +33,9 @@ Most of the code is written in C++ class style. And try to create functional and
 
 ## TODO
 * skip list 
-* big number
+* big number 
 * Aho-Corasick automaton (AC automaton)
+* Extend_gcd / gcd
 * Matrix data structure, support +, -, *, power
 * Fibonacci heap
 * graph
