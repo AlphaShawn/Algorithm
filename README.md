@@ -13,6 +13,7 @@ Most of the code is written in C++ class style. And try to create functional and
 	* Miller_Rabin
 	* Eular_Prime_Select
 	* Josephus Problem
+	* Euclid's Algorithm  greatest common divisor(gcd)
 * heap, heap_template, support customize compare function and data.
 * Trie tree
 * leftist Tree, basic heap opertion, quick merge, use it solve OJ problem(HDU-1512)
@@ -35,9 +36,10 @@ Most of the code is written in C++ class style. And try to create functional and
 * skip list 
 * big number 
 * Aho-Corasick automaton (AC automaton)
-* Extend_gcd / gcd
+* Extend_gcd / 
 * Matrix data structure, support +, -, *, power
 * Fibonacci heap
+* Johnson's algorithm
 * graph
 	* Minimum spanning tree
 		* Prim  using heap or more advanced data structure
