@@ -74,6 +74,7 @@ OJ-Problem ID | Dir | Description
 [hihocoder](http://hihocoder.com/contest/hiho92/problem/1)| number_theory/Miller_Rabin.cpp | Miller–Rabin_primality_test - [WIKI](https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test)
 [hihocoder](http://hihocoder.com/contest/hiho93/problem/1) | number_theory/Rular_prime_select.cpp | Eular prime select
 [hihocoder](http://hihocoder.com/contest/hiho94/problem/1?sid=773738) | number_theory/Josephus.cpp | mod and recurrence
+[hihocoder](http://hihocoder.com/contest/hiho95/problem/1) | | Extended Euclid's Algorithm 
 
 ## Data structure
 
