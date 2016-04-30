@@ -2,7 +2,7 @@
  *	Algorithm:  Euclid's Algorithm / 
  *	
  * 	Author: 	Alpha Xiao
- * 	Date  :		2016.4.10
+ * 	Date  :		2016.4.30
  * 	Language:  	C++11
  *
  * 	Description: 
