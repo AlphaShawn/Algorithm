@@ -50,7 +50,7 @@ void Ford_Fulkerson(Network &G, int s, int t) {
 		while(path[t] == -1 && !Q.empty()) {
 			int now = Q.front();
 			Q.pop();
-			for(int i = 1; i < G.n; ++i) {
+			for(int i = 0; i < G.n; ++i) {
 				if( i == now )
 					continue;
 				if(path[i] == -1 && G.r[now][i] > 0) {
@@ -69,11 +69,10 @@ void Ford_Fulkerson(Network &G, int s, int t) {
 			now = path[now];
 			minFlow = min(minFlow, bflow[now]);
 		}
-		
 		//update R	
 		now = path[t];
 		pre = t;
-		while(now != -1) {
+		while(pre != s) {
 			G.r[now][pre] -= minFlow;
 			G.r[pre][now] += minFlow;
 			G.f[now][pre] += minFlow;
@@ -87,13 +86,41 @@ void Ford_Fulkerson(Network &G, int s, int t) {
 }
 
 //test
+//
 int main() {
-	Network G(5);
-	G.c[1][2] = 1000000;
-	G.c[2][4] = 1000000;
-	G.c[1][3] = 1000000;
-	G.c[3][4] = 1000000;
-	G.c[2][3] = 1;
-	Ford_Fulkerson(G, 1, 4);
-	printf("%d\n", G.maxFlow);
+	int N, F, D;
+	while(std::cin>>N>>F>>D) {
+		// [1,N*2] cows, [N*2+1,N*2+F] foods, [N*2+F+1, N*2+F+D] drinks, 0 source, N*2+F+D+1 t
+		Network G(N * 2 + F + D + 2); 
+		int s = 0, t = N * 2 + F + D + 1;
+		for(int i = N * 2 + 1; i <= N * 2 + F; ++i)
+			G.c[s][i] = 1;
+		for(int i = N * 2 +F + 1; i <= N * 2 + F + D; ++i)
+			G.c[i][t] = 1;
+		for(int i = 1; i <= N; ++i)
+			G.c[i][i+N] = 1;
+
+		int a, b, tmp;
+		for(int i = 1; i <= N; ++i) {
+			scanf("%d %d", &a, &b);
+			while(a--) {
+				scanf("%d", &tmp);
+				G.c[tmp + N * 2][i] = 1;
+			}
+			while(b--) {
+				scanf("%d", &tmp);
+				G.c[N + i][N * 2 + F + tmp] = 1;
+			}
+		}
+		
+		// for(int i = 0; i < G.n; ++i) {
+		// 	for(int j = 0; j < G.n; ++j) {
+		// 		printf("%d ", G.c[i][j]);
+		// 	}
+		// 	printf("%d\n");
+		// }
+
+		Ford_Fulkerson(G, s, t);
+		printf("%d\n", G.maxFlow);
+	}
 }
