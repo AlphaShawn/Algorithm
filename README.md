@@ -46,6 +46,8 @@ Most of the code is written in C++ class style. And try to create functional and
 		* Prim  using heap or more advanced data structure
 	* Tarjan test  poj2762  p421
 * network flow
+	* Ford-Fulkerson test
+	* Dinic
 
 # OnlineJudge Catalog
 
