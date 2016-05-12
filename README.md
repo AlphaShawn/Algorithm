@@ -16,6 +16,7 @@ Most of the code is written in C++ class style. And try to create functional and
 	* Euclid's Algorithm  greatest common divisor(gcd)
 	* Extended Euclid's Algorithm (Ax + By = gcd(A, B))
 	* Euler's totient function
+	* Modular Linear System
 * heap, heap_template, support customize compare function and data.
 * Trie tree
 * leftist Tree, basic heap opertion, quick merge, use it solve OJ problem(HDU-1512)
@@ -80,6 +81,7 @@ OJ-Problem ID | Dir | Description
 [hihocoder](http://hihocoder.com/contest/hiho94/problem/1?sid=773738) | number_theory/Josephus.cpp | mod and recurrence
 [hihocoder](http://hihocoder.com/contest/hiho95/problem/1) | | Extended Euclid's Algorithm 
 [hihocoder](http://hihocoder.com/contest/hiho96/problem/1) | /number_theory/Euler's_totient_function.cpp| Euler's totient function
+[hihocoder](http://hihocoder.com/contest/hiho97/problem/1) | /number_theory/modular_linear_system.cpp | 线性同余方程组
 
 ## Data structure
 
