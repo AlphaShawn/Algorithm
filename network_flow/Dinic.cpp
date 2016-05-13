@@ -78,7 +78,7 @@ int dfs(Network &G, const int &now, int flow) {
 	return tf - flow;
 }
 
-void Ford_Fulkerson(Network &G) {
+void Dinic(Network &G) {
 	
 	G.createResidual();
 	G.updateLevelGraph();
@@ -124,7 +124,7 @@ int main() {
 		// }
 		G.s = s;
 		G.t = t;
-		Ford_Fulkerson(G);
+		Dinic(G);
 		printf("%d\n", G.maxFlow);
 	}
 }
