@@ -36,7 +36,8 @@ Most of the code is written in C++ class style. And try to create functional and
 	* Tarjan
 * network flow
 	* Ford-Fulkerson
-	* MPLA 
+	* MPLA (sap-shortest augmenting path)
+	* Dinic (Successive shortest augmenting path algo)
 
 ## TODO
 * skip list 
@@ -50,7 +51,7 @@ Most of the code is written in C++ class style. And try to create functional and
 		* Prim  using heap or more advanced data structure
 	* Tarjan test  poj2762  p421
 * network flow
-	* Dinic
+	
 
 # OnlineJudge Catalog
 
