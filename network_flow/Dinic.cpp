@@ -59,7 +59,6 @@ public:
 };
 
 int dfs(Network &G, const int &now, int flow) {
-
 	if( now == G.t )
 		return flow;
 	int tf = flow;
@@ -68,11 +67,11 @@ int dfs(Network &G, const int &now, int flow) {
 			continue;
 		if( G.r[now][i] > 0 && G.level[i] == G.level[now] + 1) {
 			int t = dfs(G, i, min(flow,G.r[now][i]));
-			G.r[now][i] -= t;
+			G.r[now][i] -= t;	//update R and F
 			G.r[i][now] += t;
 			G.f[now][i] += t;
 			G.f[i][now] -= t;
-			flow -= t;
+			flow -= t;			//remaining flow
 		}
 	}
 	return tf - flow;
@@ -84,7 +83,7 @@ void Dinic(Network &G) {
 	G.updateLevelGraph();
 	// while t is still in the level graph, which mean s can reach t
 	while(G.level[G.t] != -1) {
-		G.maxFlow += dfs(G, G.s, INTMAX);
+		G.maxFlow += dfs(G, G.s, INTMAX);	// find augumenting path and do augumenting at the same time.
 		G.updateLevelGraph();
 	}
 }

@@ -91,9 +91,14 @@ OJ-Problem ID | Dir | Description
 --------------|-----|------------
 [HDU-1512](http://acm.hdu.edu.cn/showproblem.php?pid=1512)| /leftist_tree/OJ-hdu1512.cpp| leftist tree + union set
 [hihocoder-1078](http://hihocoder.com/problemset/problem/1078) | | segment tree + lazy update
-[OJ hihocoder 1014](http://hihocoder.com/problemset/problem/1014) | /TrieTree/trie.cpp | simple trie tree
+[hihocoder-1014](http://hihocoder.com/problemset/problem/1014) | /TrieTree/trie.cpp | simple trie tree
 
 ## Network flow
 OJ-Problem ID | Dir | Description
 --------------|-----|------------
 [POJ-3281](http://poj.org/problem?id=3281)|/network_flow/ford_fulkerson.cpp| split node
+
+##Secching
+OJ-Problem ID | Dir | Description
+--------------|-----|------------
+[hihocoder](http://hihocoder.com/contest/hiho98/problem/1) | | 24点
