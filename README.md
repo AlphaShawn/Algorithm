@@ -36,13 +36,17 @@ Most of the code is written in C++ class style. And try to create functional and
 	* Tarjan
 * network flow
 	* Ford-Fulkerson
-	* MPLA (sap-shortest augmenting path)
+	* MPLA (shortest augmenting path)
 	* Dinic (Successive shortest augmenting path algo)
+	* SAP
 
 ## TODO
 * skip list 
-* big number 
-* Aho-Corasick automaton (AC automaton)
+* big number
+* String match 
+	* Aho-Corasick automaton (AC automaton)
+	* BM
+	* Sunday
 * Matrix data structure, support +, -, *, power
 * Fibonacci heap
 * Johnson's algorithm
@@ -51,7 +55,8 @@ Most of the code is written in C++ class style. And try to create functional and
 		* Prim  using heap or more advanced data structure
 	* Tarjan test  poj2762  p421
 * network flow
-	
+	* Minimum-Cost Flow Problem
+	* Maximum Flow with lower bound
 
 # OnlineJudge Catalog
 
