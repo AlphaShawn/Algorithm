@@ -103,7 +103,8 @@ OJ-Problem ID | Dir | Description
 --------------|-----|------------
 [POJ-3281](http://poj.org/problem?id=3281)|/network_flow/ford_fulkerson.cpp| split node
 
-##Secching
+##Searching
 OJ-Problem ID | Dir | Description
 --------------|-----|------------
 [hihocoder](http://hihocoder.com/contest/hiho98/problem/1) | | 24点
+[hihocoder](http://hihocoder.com/contest/hiho99/problem/1) | | bfs
