@@ -39,6 +39,10 @@ Most of the code is written in C++ class style. And try to create functional and
 	* MPLA (shortest augmenting path)
 	* Dinic (Successive shortest augmenting path algo)
 	* SAP
+* CG
+	* Convex Hull
+		* Graham Scan
+		* Javis
 
 ## TODO
 * skip list 
@@ -58,7 +62,7 @@ Most of the code is written in C++ class style. And try to create functional and
 	* Minimum-Cost Flow Problem
 	* Maximum Flow with lower bound
 * CG
-	* Convex Hull
+
 
 # OnlineJudge Catalog
 
