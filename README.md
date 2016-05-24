@@ -57,6 +57,8 @@ Most of the code is written in C++ class style. And try to create functional and
 * network flow
 	* Minimum-Cost Flow Problem
 	* Maximum Flow with lower bound
+* CG
+	* Convex Hull
 
 # OnlineJudge Catalog
 
