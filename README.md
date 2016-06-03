@@ -17,6 +17,7 @@ Most of the code is written in C++ class style. And try to create functional and
 	* Extended Euclid's Algorithm (Ax + By = gcd(A, B))
 	* Euler's totient function
 	* Modular Linear System
+	* Cantor Expansion
 * heap, heap_template, support customize compare function and data.
 * Trie tree
 * leftist Tree, basic heap opertion, quick merge, use it solve OJ problem(HDU-1512)
